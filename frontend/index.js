@@ -86,6 +86,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         let hardSolvedDirection = 'desc';
         let sectionDirection = 'asc';
 
+        // Retrieve the value from the text field
+        var usernameInput = document.getElementById("username");
+        var username = usernameInput.value;
+
+        // Display the username under the profile picture
+        var usernameDisplay = document.createElement("div");
+        usernameDisplay.innerHTML = username;
+        usernameDisplay.classList.add("username");
+        document.querySelector(".profile").appendChild(usernameDisplay);
+
         const sortData = (data, field, direction, isNumeric = false) => {
             return data.sort((a, b) => {
                 const valA = a[field] || (isNumeric ? 0 : 'Z');
@@ -99,6 +109,29 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
         };
+
+        // script.js  
+        function showComparison(name, score, rank) {  
+        const comparisonDetails = document.getElementById('comparisonDetails');  
+        comparisonDetails.innerHTML = `  
+            <p><strong>Name:</strong> ${name}</p>  
+            <p><strong>Score:</strong> ${score}</p>  
+            <p><strong>Rank:</strong> ${rank}</p>  
+            `;  
+        document.getElementById('comparisonDialog').style.display = "block";  
+        }  
+
+        function closeDialog() {  
+        document.getElementById('comparisonDialog').style.display = "none";  
+        }  
+
+        // Close the dialog if the user clicks outside of it  
+        window.onclick = function(event) {  
+            const dialog = document.getElementById('comparisonDialog');  
+            if (event.target === dialog) {  
+            dialog.style.display = "none";  
+            }  
+        }
 
         // Initialize the page
         populateSectionFilter();

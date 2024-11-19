@@ -15,3 +15,40 @@ tr {
 tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+.profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-right: 10px;
+.username {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px; /* adjust the font size as needed */
+}
+}
+body {  
+    font-family: Arial, sans-serif;  
+}  
+#leaderboard {  
+    display: flex;  
+    justify-content: space-around;  
+    margin: 20px;  
+}  
+.person {  
+    border: 1px solid #ccc;  
+    padding: 10px;  
+    margin: 5px;  
+}  
+dialog {  
+    padding: 20px;  
+    border: none;  
+    border-radius: 5px;  
+}  

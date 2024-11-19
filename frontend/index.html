@@ -81,9 +81,44 @@
                         <p>Error loading data. Please try again later.</p>
                     </div>
                 </div>
+                <div class="profile">
+                    <div class="profile-picture"></div>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+
+                <div class="super-special-header>
+                    <div class="header-display-name"></div>
+                    <div class="totals-row"></div>
+                </div>
+
+                <div id="leaderboard">  
+                    <div class="person" onclick="showDialog('Person A')">  
+                        <h3>Person A</h3>  
+                        <p>Score: " 100 "</p>  
+                    </div>  
+                    <div class="person" onclick="showDialog('Person B')">  
+                        <h3>Person B</h3>  
+                        <p>Score: " 95 "</p>  
+                    </div>  
+                </div>  
+                
+                <dialog id="comparisonDialog">  
+                    <h2>Comparison</h2>  
+                    <div id="comparisonContent"></div>  
+                    <button onclick="document.getElementById('comparisonDialog').close()">Close</button>  
+                </dialog>  
+                
+                <script>  
+                    function showDialog(name, score) {  
+                        const comparisonContent = document.getElementById('comparisonContent');  
+                        comparisonContent.innerHTML = `<p>${name} has a score of ${score}.</p>`;  
+                        document.getElementById('comparisonDialog').showModal();  
+                    }  
+                </script>  
+
             </div>
         </div>
     </div>
     <script src="index.js"></script>
 </body>
-</html>
+</html> 
